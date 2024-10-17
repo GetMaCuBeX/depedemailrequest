@@ -3,8 +3,8 @@
 //session_start();
 
 // Create a session ID
-$_SESSION['username'] = 7315740;
-$_SESSION['position'] = 'ADMIN';
+//$_SESSION['username'] = 7315740;
+//$_SESSION['position'] = 'ADMIN';
 
 // Check if a user is logged in or session is set
 //if (isset($_SESSION['session_empid'])) {
