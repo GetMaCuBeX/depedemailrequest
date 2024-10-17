@@ -4,7 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Jb_emailrequest extends CI_Controller {
 
-
     private $values;
     private $partials = 'jb/partials/';
     private $p_dashboard_a = 'jb/emailrequest/page/dashboard_a'; // ADMIN PAGE
@@ -62,7 +61,9 @@ class Jb_emailrequest extends CI_Controller {
 // ------------------------------------------------------------------------------------------------------------
     public function index() {
         $_SESSION['username'] = 7315740;
-        $_SESSION['position'] = '';
+        $_SESSION['position'] = 'ADMIN';
+//        session_unset(); // Unset session variables
+//        session_destroy(); // Destroy the session
         if ($this->_IS_IN_SESSION_empID()) { // CHECK IF SESSION LOGIN
             $this->values["PAGE"] = "DASHBOARD";
             $this->_set_values();
