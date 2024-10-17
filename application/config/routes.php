@@ -50,7 +50,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-$route['default_controller'] = 'c_emailrequest/dashboard';
+$route['default_controller'] = 'jb_emailrequest/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -59,19 +59,9 @@ $route['translate_uri_dashes'] = FALSE;
 // :num => pass numeric value
 // $route['ci3/service/(:num)/(:any)'] = 'ci3/service/$1/$2';
 
-
-
-$route['update'] = 'jab_action/update_data';
-
-
-
-$route['h'] = 'c_emailrequest/home';
-$route['c'] = 'c_emailrequest/create';
-$route['r'] = 'c_emailrequest/read';
-$route['u'] = 'c_emailrequest/update';
-$route['d'] = 'c_emailrequest/delete';
+ 
 
 //$route['t'] = 'c_emailrequest/test';
 
-$route['t'] = 'Jb_emailrequest/test';
-$route['i'] = 'Jb_emailrequest/index';
+//$route['t'] = 'Jb_emailrequest/test';
+//$route['i'] = 'Jb_emailrequest/index';

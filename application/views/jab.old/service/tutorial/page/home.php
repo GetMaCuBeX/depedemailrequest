@@ -1,1 +1,0 @@
-<h1>CI3 TUTORIAL HOME</h1>
