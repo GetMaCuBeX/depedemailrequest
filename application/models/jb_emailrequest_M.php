@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class emailrequest_M extends CI_Model {
+class jb_emailrequest_M extends CI_Model {
 
     // MY DATABASE
     // private $db_1 = "deped"; // ANOTHER DATABASE DEFINE IN database.php

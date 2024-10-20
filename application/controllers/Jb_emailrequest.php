@@ -60,8 +60,8 @@ class Jb_emailrequest extends CI_Controller {
 // ------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------------------
     public function index() {
-        $_SESSION['username'] = 7315740;
-        $_SESSION['position'] = 'ADMIN';
+//        $_SESSION['username'] = 7315740;
+//        $_SESSION['position'] = 'ADMIN';
 //        session_unset(); // Unset session variables
 //        session_destroy(); // Destroy the session
         if ($this->_IS_IN_SESSION_empID()) { // CHECK IF SESSION LOGIN
@@ -72,13 +72,15 @@ class Jb_emailrequest extends CI_Controller {
             $this->load->view($this->partials . 'topbar', $this->values);
             $this->load->view($this->partials . 'sidebar', $this->values);
             if ($this->_IS_AN_ADMIN_empID()) { // ADMIN USER
-                $rs['data'] = $this->dashboard_M->_dashboard_query_admin();
+                $rs['data'] = $this->jb_dashboard_M->_dashboard_query_admin();
                 $this->load->view($this->p_dashboard_a, $rs);
             } else { // REGULAR USER
-                $rs['data'] = $this->dashboard_M->_dashboard_query_user();
+                $rs['data'] = $this->jb_dashboard_M->_dashboard_query_user();
                 $this->load->view($this->p_dashboard_u, $rs);
             }
             $this->load->view($this->partials . 'footer', $this->values);
+        } else {
+        
         }
     }
 
@@ -98,11 +100,11 @@ class Jb_emailrequest extends CI_Controller {
             $this->load->view($this->partials . 'sidebar', $this->values);
             // ADMIN USER
             if ($this->_IS_AN_ADMIN_empID()) {
-                $rs['data'] = $this->emailrequest_M->_read_where_empID_u($_SESSION['username']);
+                $rs['data'] = $this->jb_emailrequest_M->_read_where_empID_u($_SESSION['username']);
                 $this->load->view($this->p_userrequest_u, $rs);
                 // REGULAR USER
             } else {
-                $rs['data'] = $this->emailrequest_M->_read_where_empID_u($_SESSION['username']);
+                $rs['data'] = $this->jb_emailrequest_M->_read_where_empID_u($_SESSION['username']);
                 $this->load->view($this->p_userrequest_u, $rs);
             }
             $this->load->view($this->partials . 'footer', $this->values);
@@ -116,7 +118,7 @@ class Jb_emailrequest extends CI_Controller {
 
             if (isset($_POST['update_id'])) {
                 $id = $this->input->post('update_id');
-                $rs['data'] = $this->emailrequest_M->_read_where_id($id);
+                $rs['data'] = $this->jb_emailrequest_M->_read_where_id($id);
 
                 $this->load->view($this->partials . 'header', $this->values);
                 $this->load->view($this->partials . 'topbar', $this->values);
@@ -142,7 +144,7 @@ class Jb_emailrequest extends CI_Controller {
                 $this->search_by_daterange();
             } else {
                 $this->_set_values();
-                $rs['data'] = $this->emailrequest_M->_read_where_isdone_false();
+                $rs['data'] = $this->jb_emailrequest_M->_read_where_isdone_false();
 
                 $this->load->view($this->partials . 'header', $this->values);
                 $this->load->view($this->partials . 'topbar', $this->values);
@@ -166,7 +168,7 @@ class Jb_emailrequest extends CI_Controller {
         }
 
 // Call the model method to get the data
-        $rs['data'] = $this->emailrequest_M->_read_where_isdone_false_daterange($date_from, $date_to);
+        $rs['data'] = $this->jb_emailrequest_M->_read_where_isdone_false_daterange($date_from, $date_to);
         $this->values = [
             "DATE_FROM" => $date_from,
             "DATE_TO" => $date_to
@@ -193,7 +195,7 @@ class Jb_emailrequest extends CI_Controller {
         if ($this->_IS_IN_SESSION_empID()) {
             $this->_set_values();
 
-            $rs['data'] = $this->emailrequest_M->_read_where_isdone_true();
+            $rs['data'] = $this->jb_emailrequest_M->_read_where_isdone_true();
 
             $this->load->view($this->partials . 'header', $this->values);
             $this->load->view($this->partials . 'topbar', $this->values);
@@ -223,7 +225,7 @@ class Jb_emailrequest extends CI_Controller {
                 $this->load->view($this->partials . 'header', $this->values);
                 $this->load->view($this->partials . 'topbar', $this->values);
                 $this->load->view($this->partials . 'sidebar', $this->values);
-                $rs['data'] = $this->emailrequest_M->_read_data_from_employee($_SESSION['username']);
+                $rs['data'] = $this->jb_emailrequest_M->_read_data_from_employee($_SESSION['username']);
                 $this->load->view($this->p_create_u, $rs);
                 $this->load->view($this->partials . 'footer', $this->values);
             }
@@ -246,7 +248,7 @@ class Jb_emailrequest extends CI_Controller {
             $this->load->view($this->partials . 'header', $this->values);
             $this->load->view($this->partials . 'topbar', $this->values);
             $this->load->view($this->partials . 'sidebar', $this->values);
-            $rs['data'] = $this->emailrequest_M->_read_data_from_employee($_SESSION['username']);
+            $rs['data'] = $this->jb_emailrequest_M->_read_data_from_employee($_SESSION['username']);
             $this->load->view($this->p_create_u, $rs);
             $this->load->view($this->partials . 'footer', $this->values);
         } else {
@@ -269,7 +271,7 @@ class Jb_emailrequest extends CI_Controller {
             'deped_email' => $this->input->post('deped_email')
         ];
 
-        $rs = $this->emailrequest_M->_create($data);
+        $rs = $this->jb_emailrequest_M->_create($data);
         redirect($this->c_method_user);
     }
 
@@ -282,7 +284,7 @@ class Jb_emailrequest extends CI_Controller {
         if (isset($_SESSION['username']) && isset($_SESSION['position'])) {
             return true;
         } else {
-            echo "SESSION NOT SET";
+            echo "MUST LOGIN TO MIS FIRST...";
             return false;
         }
     }
@@ -308,11 +310,11 @@ class Jb_emailrequest extends CI_Controller {
         if (isset($_SESSION['username']) && isset($_SESSION['position'])) {
             // ADMIN
             if ($_SESSION['position'] == 'ADMIN') {
-                $count = $this->emailrequest_M->_count_all_request_isdone_false();
+                $count = $this->jb_emailrequest_M->_count_all_request_isdone_false();
                 $this->values["REQUEST_COUNT_ISDONE_FALSE"] = $count;
                 // REGULAR USER
             } else {
-                $count = $this->emailrequest_M->_count_request_isdone_false($_SESSION['username']);
+                $count = $this->jb_emailrequest_M->_count_request_isdone_false($_SESSION['username']);
                 $this->values["REQUEST_COUNT_ISDONE_FALSE"] = $count;
             }
         } else {
@@ -333,7 +335,7 @@ class Jb_emailrequest extends CI_Controller {
             $this->values["PAGE"] = "UPDATE";
             if (isset($_POST['update_id'])) {
                 $id = $this->input->post('update_id');
-                $rs['data'] = $this->emailrequest_M->_read_where_id($id);
+                $rs['data'] = $this->jb_emailrequest_M->_read_where_id($id);
 
                 $this->load->view($this->partials . 'header', $this->values);
                 $this->load->view($this->partials . 'topbar', $this->values);
@@ -354,7 +356,7 @@ class Jb_emailrequest extends CI_Controller {
             $this->values["PAGE"] = "UPDATE";
             if (isset($_POST['update_id'])) {
                 $id = $this->input->post('update_id');
-                $rs['data'] = $this->emailrequest_M->_read_where_id($id);
+                $rs['data'] = $this->jb_emailrequest_M->_read_where_id($id);
 
                 $this->load->view($this->partials . 'header', $this->values);
                 $this->load->view($this->partials . 'topbar', $this->values);
@@ -375,7 +377,7 @@ class Jb_emailrequest extends CI_Controller {
             $this->values["PAGE"] = "UPDATE";
             if (isset($_POST['update_id'])) {
                 $id = $this->input->post('update_id');
-                $rs['data'] = $this->emailrequest_M->_read_where_id($id);
+                $rs['data'] = $this->jb_emailrequest_M->_read_where_id($id);
 
                 $this->load->view($this->partials . 'header', $this->values);
                 $this->load->view($this->partials . 'topbar', $this->values);
@@ -422,7 +424,7 @@ class Jb_emailrequest extends CI_Controller {
                 $data = array(
                     'is_done' => 1
                 );
-                $r = $this->emailrequest_M->_update_isdone($id, $data);
+                $r = $this->jb_emailrequest_M->_update_isdone($id, $data);
                 if ($r) {
                     redirect($this->c_method_request); // UPDATE WAS SUCCESSFUL
                 }
@@ -439,7 +441,7 @@ class Jb_emailrequest extends CI_Controller {
                 $data = array(
                     'is_done' => 0
                 );
-                $r = $this->emailrequest_M->_update_isdone($id, $data);
+                $r = $this->jb_emailrequest_M->_update_isdone($id, $data);
                 if ($r) {
                     redirect($this->c_method_complete); // UPDATE WAS SUCCESSFUL
                 }
@@ -456,7 +458,7 @@ class Jb_emailrequest extends CI_Controller {
                 $data = array(
                     'is_delete' => 1
                 );
-                $r = $this->emailrequest_M->_update_isdelete($id, $data);
+                $r = $this->jb_emailrequest_M->_update_isdelete($id, $data);
                 if ($r) {
                     echo "UPDATE WAS SUCCESSFUL";
 // redirect($this->cntrl_email_home1); // UPDATE WAS SUCCESSFUL
@@ -523,7 +525,7 @@ class Jb_emailrequest extends CI_Controller {
                 'processed_by' => $processed_by,
                 'response_message' => $response_message
             );
-            $this->emailrequest_M->_update_where($id, $data);
+            $this->jb_emailrequest_M->_update_where($id, $data);
             redirect($this->c_method_request); // UPDATE WAS SUCCESSFUL
         }
     }
@@ -555,7 +557,7 @@ class Jb_emailrequest extends CI_Controller {
                 'processed_by' => $processed_by,
                 'response_message' => $response_message
             );
-            $r = $this->emailrequest_M->_update_where($id, $data);
+            $r = $this->jb_emailrequest_M->_update_where($id, $data);
             redirect($this->c_method_complete);
 // UPDATE WAS SUCCESSFUL
         } else {
@@ -580,7 +582,7 @@ class Jb_emailrequest extends CI_Controller {
         if ($this->_IS_IN_SESSION_empID()) {
             if (isset($_POST['delete_id'])) {
                 $id = $this->input->post('delete_id');
-                $rs = $this->emailrequest_M->_delete_where($id); // CALL MODEL FUNCTION
+                $rs = $this->jb_emailrequest_M->_delete_where($id); // CALL MODEL FUNCTION
                 if ($rs) {
                     redirect($this->c_method_request); // DELETION WAS SUCCESSFUL
                 } else {
@@ -593,7 +595,7 @@ class Jb_emailrequest extends CI_Controller {
     public function deleterequest_c() {
         if (isset($_POST['delete_id'])) {
             $id = $this->input->post('delete_id');
-            $rs = $this->emailrequest_M->_delete_where($id); // CALL MODEL FUNCTION
+            $rs = $this->jb_emailrequest_M->_delete_where($id); // CALL MODEL FUNCTION
 
             if ($rs) {
                 redirect($this->c_method_complete); // DELETION WAS SUCCESSFUL
