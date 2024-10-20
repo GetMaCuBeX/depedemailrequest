@@ -236,7 +236,8 @@
 
     <!-- LOGO -->
     <div class="logo-box">
-        <a href="<?= base_url(); ?>jb_emailrequest/" class="logo text-center logo-dark">
+        <!--<a href="<?= base_url(); ?>jb_emailrequest/" class="logo text-center logo-dark">-->
+        <a href="#" class="logo text-center logo-dark">
             <span class="logo-lg">
                 <img src="<?= base_url(); ?>assets/images/logo-dark.png" alt="" height="18">
                 <!-- <span class="logo-lg-text-dark">Velonic</span> -->
@@ -247,7 +248,8 @@
             </span>
         </a>
 
-        <a href="<?= base_url(); ?>jb_emailrequest/" class="logo text-center logo-light">
+        <!--<a href="<?= base_url(); ?>jb_emailrequest/" class="logo text-center logo-light">-->
+        <a href="#" class="logo text-center logo-light">
             <span class="logo-lg">
                 <img src="<?= base_url(); ?>assets/images/logo-light.png" alt="" height="18">
                 <!-- <span class="logo-lg-text-dark">Velonic</span> -->

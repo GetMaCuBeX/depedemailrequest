@@ -76,9 +76,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'password',
-	'database' => 'deped_davor',
+	'username' => 'root', // CHANGE
+	'password' => 'password', // CHANGE
+	'database' => 'mis', // CHANGE
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -96,47 +96,47 @@ $db['default'] = array(
 );
 
 
-$db['deped'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'password',
-	'database' => 'deped_davor',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => 'jab_',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'), // developement
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
+//$db['deped'] = array(
+//	'dsn'	=> '',
+//	'hostname' => 'localhost',
+//	'username' => 'root',
+//	'password' => 'password',
+//	'database' => 'deped_davor',
+//	'dbdriver' => 'mysqli',
+//	'dbprefix' => 'jab_',
+//	'pconnect' => FALSE,
+//	'db_debug' => (ENVIRONMENT !== 'production'), // developement
+//	'cache_on' => FALSE,
+//	'cachedir' => '',
+//	'char_set' => 'utf8',
+//	'dbcollat' => 'utf8_general_ci',
+//	'swap_pre' => '',
+//	'encrypt' => FALSE,
+//	'compress' => FALSE,
+//	'stricton' => FALSE,
+//	'failover' => array(),
+//	'save_queries' => TRUE
+//);
 
 
-$db['mis'] = array(
-	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => 'password',
-	'database' => 'mis',
-	'dbdriver' => 'mysqli',
-	'dbprefix' => 'hris_',
-	'pconnect' => FALSE,
-	'db_debug' => (ENVIRONMENT !== 'production'), // developement
-	'cache_on' => FALSE,
-	'cachedir' => '',
-	'char_set' => 'utf8',
-	'dbcollat' => 'utf8_general_ci',
-	'swap_pre' => '',
-	'encrypt' => FALSE,
-	'compress' => FALSE,
-	'stricton' => FALSE,
-	'failover' => array(),
-	'save_queries' => TRUE
-);
+//$db['mis'] = array(
+//	'dsn'	=> '',
+//	'hostname' => 'localhost',
+//	'username' => 'root',
+//	'password' => 'password',
+//	'database' => 'mis',
+//	'dbdriver' => 'mysqli',
+//	'dbprefix' => 'hris_',
+//	'pconnect' => FALSE,
+//	'db_debug' => (ENVIRONMENT !== 'production'), // developement
+//	'cache_on' => FALSE,
+//	'cachedir' => '',
+//	'char_set' => 'utf8',
+//	'dbcollat' => 'utf8_general_ci',
+//	'swap_pre' => '',
+//	'encrypt' => FALSE,
+//	'compress' => FALSE,
+//	'stricton' => FALSE,
+//	'failover' => array(),
+//	'save_queries' => TRUE
+//);

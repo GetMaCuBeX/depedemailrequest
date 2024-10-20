@@ -125,16 +125,18 @@
                                         <span>Save</span>
                                     </button>
 
-                                    <button name="cancel" type="submit"
+<!--                                    <button name="cancel" type="submit"
+                                            class="btn btn-danger waves-effect width-md waves-light btn-md">
+                                        <i class="fas fa-times"></i>
+                                        <span>Cancel</span>
+                                    </button> -->
+                  
+                                    <button name="cancel_updaterequest" type="button" onclick="window.history.back();"
                                             class="btn btn-danger waves-effect width-md waves-light btn-md">
                                         <!--<i class="fas fa-times"></i>-->
-                                        <span>Cancel</span>
-                                    </button> 
-                                    <!--                                    <button name="cancel_updaterequest" type="button" onclick="window.history.back();"
-                                                                                class="btn btn-danger waves-effect width-md waves-light btn-md">
-                                                                            <i class="fas fa-times"></i>
-                                                                            <span>Back</span>
-                                                                        </button>-->
+                                        <span>Back</span>
+                                    </button>
+
 
                                 </div>
                             </form>
