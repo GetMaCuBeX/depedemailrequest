@@ -65,3 +65,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 //$route['t'] = 'Jb_emailrequest/test';
 //$route['i'] = 'Jb_emailrequest/index';
+
+
+
+
+//$route['coa'] = 'Jb_coa/index';

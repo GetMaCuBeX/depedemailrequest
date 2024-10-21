@@ -32,35 +32,43 @@
 
 
 
-                <!--                <li>
-                                    <a href="javascript: void(0);" class="waves-effect">
-                                        <i class="mdi mdi-view-dashboard"></i>
-                                        <span> DEPED EMAIL </span>
-                                        <span class="badge badge-info badge-pill float-right"> 3 </span>
-                                    </a>
-                                    <ul class="nav-second-level" aria-expanded="false">
-                                        <li><a href="<?= base_url(); ?>jab_email/home">HOME</a></li>
-                                        <li><a href="<?= base_url(); ?>jab_email/create">REQUEST</a></li>
-                                    </ul>
-                                </li>-->
-
-
-
-
-
-
 <!--                <li>
                     <a href="javascript: void(0);" class="waves-effect">
-                        <i class="mdi mdi-format-underline"></i>
-                        <span> COA REPORTS </span>
-                        <span class="menu-arrow"></span>
+                        <i class="mdi mdi-view-dashboard"></i>
+                        <span> COA </span>
+                        <span class="badge badge-info badge-pill float-right"> 3 </span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="<?= base_url(); ?>jab_coa/home">HOME</a></li>
-                        <li><a href="<?= base_url(); ?>jab_coa/ppe">PPE</a></li>
-                        <li><a href="<?= base_url(); ?>jab_coa/ppe">TABS & ACORDIONS</a></li>
+                        <li><a href="<?= base_url(); ?>jb_coa/index">PPE</a></li> 
                     </ul>
-                </li>-->
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="<?= base_url(); ?>jb_coa/annexa">ANNEX A</a></li> 
+                    </ul>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="<?= base_url(); ?>jb_coa/annexb">ANNEX B</a></li> 
+                    </ul>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="<?= base_url(); ?>jb_coa/annexc">ANNEX C</a></li> 
+                    </ul>
+                </li> -->
+
+
+
+
+
+
+                <!--                <li>
+                                    <a href="javascript: void(0);" class="waves-effect">
+                                        <i class="mdi mdi-format-underline"></i>
+                                        <span> COA REPORTS </span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul class="nav-second-level" aria-expanded="false">
+                                        <li><a href="<?= base_url(); ?>jab_coa/home">HOME</a></li>
+                                        <li><a href="<?= base_url(); ?>jab_coa/ppe">PPE</a></li>
+                                        <li><a href="<?= base_url(); ?>jab_coa/ppe">TABS & ACORDIONS</a></li>
+                                    </ul>
+                                </li>-->
 
 
 
