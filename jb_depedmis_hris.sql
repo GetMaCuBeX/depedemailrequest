@@ -11,7 +11,7 @@
  Target Server Version : 80039 (8.0.39)
  File Encoding         : 65001
 
- Date: 21/10/2024 10:24:40
+ Date: 21/10/2024 15:49:59
 */
 
 SET NAMES utf8mb4;
@@ -37,13 +37,11 @@ CREATE TABLE `jb_coa_ppe_annex_a`  (
   `remarks` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `school_idnumber` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_a_jb_coa_ppe_legend_article_1`(`article_id` ASC) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_a_jb_coa_ppe_group_condition_2`(`condition_name` ASC) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_a_jb_school_3`(`school_idnumber` ASC) USING BTREE,
-  CONSTRAINT `fk_jb_coa_ppe_annex_a_jb_coa_ppe_group_condition_2` FOREIGN KEY (`condition_name`) REFERENCES `jb_coa_ppe_group_condition` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_jb_coa_ppe_annex_a_jb_coa_ppe_legend_article_1` FOREIGN KEY (`article_id`) REFERENCES `jb_coa_ppe_group_article` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_jb_coa_ppe_annex_a_jb_school_3` FOREIGN KEY (`school_idnumber`) REFERENCES `jb_school` (`school_idnumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  INDEX `fk_jb_coa_ppe_annex_a_jb_school_1`(`school_idnumber` ASC) USING BTREE,
+  INDEX `fk_jb_coa_ppe_annex_a_jb_coa_ppe_group_article_2`(`article_id` ASC) USING BTREE,
+  CONSTRAINT `fk_jb_coa_ppe_annex_a_jb_coa_ppe_group_article_2` FOREIGN KEY (`article_id`) REFERENCES `jb_coa_ppe_group_article` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `fk_jb_coa_ppe_annex_a_jb_school_1` FOREIGN KEY (`school_idnumber`) REFERENCES `jb_school` (`school_idnumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jb_coa_ppe_annex_a
@@ -65,13 +63,11 @@ CREATE TABLE `jb_coa_ppe_annex_b`  (
   `remarks` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `school_idnumber` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_b_jb_coa_ppe_legend_article_1`(`article_id` ASC) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_b_jb_coa_ppe_group_condition_2`(`condition_name` ASC) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_b_jb_school_3`(`school_idnumber` ASC) USING BTREE,
-  CONSTRAINT `fk_jb_coa_ppe_annex_b_jb_coa_ppe_group_condition_2` FOREIGN KEY (`condition_name`) REFERENCES `jb_coa_ppe_group_condition` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_jb_coa_ppe_annex_b_jb_coa_ppe_legend_article_1` FOREIGN KEY (`article_id`) REFERENCES `jb_coa_ppe_group_article` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_jb_coa_ppe_annex_b_jb_school_3` FOREIGN KEY (`school_idnumber`) REFERENCES `jb_school` (`school_idnumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  INDEX `fk_jb_coa_ppe_annex_b_jb_school_1`(`school_idnumber` ASC) USING BTREE,
+  INDEX `fk_jb_coa_ppe_annex_b_jb_coa_ppe_group_article_2`(`article_id` ASC) USING BTREE,
+  CONSTRAINT `fk_jb_coa_ppe_annex_b_jb_coa_ppe_group_article_2` FOREIGN KEY (`article_id`) REFERENCES `jb_coa_ppe_group_article` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `fk_jb_coa_ppe_annex_b_jb_school_1` FOREIGN KEY (`school_idnumber`) REFERENCES `jb_school` (`school_idnumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jb_coa_ppe_annex_b
@@ -93,13 +89,11 @@ CREATE TABLE `jb_coa_ppe_annex_c`  (
   `remarks` text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL,
   `school_idnumber` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_c_jb_coa_ppe_group_article_1`(`article_id` ASC) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_c_jb_coa_ppe_group_condition_2`(`condition_name` ASC) USING BTREE,
-  INDEX `fk_jb_coa_ppe_annex_c_jb_school_3`(`school_idnumber` ASC) USING BTREE,
-  CONSTRAINT `fk_jb_coa_ppe_annex_c_jb_coa_ppe_group_article_1` FOREIGN KEY (`article_id`) REFERENCES `jb_coa_ppe_group_article` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_jb_coa_ppe_annex_c_jb_coa_ppe_group_condition_2` FOREIGN KEY (`condition_name`) REFERENCES `jb_coa_ppe_group_condition` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `fk_jb_coa_ppe_annex_c_jb_school_3` FOREIGN KEY (`school_idnumber`) REFERENCES `jb_school` (`school_idnumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  INDEX `fk_jb_coa_ppe_annex_c_jb_school_1`(`school_idnumber` ASC) USING BTREE,
+  INDEX `fk_jb_coa_ppe_annex_c_jb_coa_ppe_group_article_2`(`article_id` ASC) USING BTREE,
+  CONSTRAINT `fk_jb_coa_ppe_annex_c_jb_coa_ppe_group_article_2` FOREIGN KEY (`article_id`) REFERENCES `jb_coa_ppe_group_article` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `fk_jb_coa_ppe_annex_c_jb_school_1` FOREIGN KEY (`school_idnumber`) REFERENCES `jb_school` (`school_idnumber`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jb_coa_ppe_annex_c
@@ -113,7 +107,7 @@ CREATE TABLE `jb_coa_ppe_group`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jb_coa_ppe_group
@@ -128,25 +122,12 @@ CREATE TABLE `jb_coa_ppe_group_article`  (
   `group_id` int NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `fk_jb_coa_ppe_legend_article_jb_coa_ppe_legend_1`(`group_id` ASC) USING BTREE,
-  CONSTRAINT `fk_jb_coa_ppe_legend_article_jb_coa_ppe_legend_1` FOREIGN KEY (`group_id`) REFERENCES `jb_coa_ppe_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+  INDEX `fk_jb_coa_ppe_group_article_jb_coa_ppe_group_1`(`group_id` ASC) USING BTREE,
+  CONSTRAINT `fk_jb_coa_ppe_group_article_jb_coa_ppe_group_1` FOREIGN KEY (`group_id`) REFERENCES `jb_coa_ppe_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of jb_coa_ppe_group_article
--- ----------------------------
-
--- ----------------------------
--- Table structure for jb_coa_ppe_group_condition
--- ----------------------------
-DROP TABLE IF EXISTS `jb_coa_ppe_group_condition`;
-CREATE TABLE `jb_coa_ppe_group_condition`  (
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  PRIMARY KEY (`name`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of jb_coa_ppe_group_condition
 -- ----------------------------
 
 -- ----------------------------
