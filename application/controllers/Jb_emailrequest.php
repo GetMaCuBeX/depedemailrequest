@@ -37,8 +37,8 @@ class Jb_emailrequest extends CI_Controller {
     }
 
     public function index() {
-        $_SESSION['username'] = 7315740;
-        $_SESSION['position'] = 'ADMIN';
+//        $_SESSION['username'] = 7315740;
+//        $_SESSION['position'] = 'ADMIN';
 //        session_unset(); // Unset session variables
 //        session_destroy(); // Destroy the session
         if ($this->_IS_IN_SESSION_empID()) { // CHECK IF SESSION LOGIN
