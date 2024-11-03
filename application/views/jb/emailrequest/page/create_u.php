@@ -33,16 +33,14 @@
                             <form method="post" class="form-horizontal">
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label">Employee ID:</label>
-                                    <div class="col-lg-3">
+                                    <div class="col-lg-4">
                                         <input name="mis_emp_table_id" type="text" class="form-control" readonly=""
                                                placeholder="Employee ID" value="<?php echo $data->IDNumber; ?>">
                                     </div>
-                                    <label class="col-lg-1 col-form-label" for="example-date"></label>
-                                    <div class="col-lg-2">
-                                        <!-- <input name="request_date" class="form-control" readonly="" id="example-date" type="date" value="<?php echo date('Y-m-d'); ?>"> -->
-                                    </div>
+                              
+                              
                                     <label class="col-lg-2 col-form-label">School ID:</label>
-                                    <div class="col-lg-2">
+                                    <div class="col-lg-4">
                                         <input name="school_id" type="text" class="form-control" readonly=""
                                                placeholder="School ID" value="<?php echo $data->schoolID; ?>">
                                     </div>
