@@ -21,8 +21,12 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
-|
+  
+  ONLINE SERVER CONFIG
+  $config['base_url'] = 'https://jb.mati-itsolutions.com//';
+  $config['base_url'] = 'https://domain name//';
 */
+
 $config['base_url'] = 'http://localhost/depedemailrequest/';
 
 /*
