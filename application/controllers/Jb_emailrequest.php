@@ -523,6 +523,7 @@ class Jb_emailrequest extends CI_Controller {
                 'processed_by' => $processed_by,
                 'response_message' => $response_message
             );
+            
             $this->Jb_emailrequest_M->_update_where($id, $data);
             redirect($this->c_method_request); // UPDATE WAS SUCCESSFUL
         }

@@ -30,8 +30,7 @@
                     <div class="col-12">
                         <div class="">
 
-                            <form method="post" class="form-horizontal"
-                                action="<?= base_url('jb_emailrequest/save_updaterequest') ?>">
+                            <form method="post" class="form-horizontal"  action="<?= base_url('jb_emailrequest/save_updaterequest') ?>">
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label">Employee ID:</label>
                                     <div class="col-lg-4">
