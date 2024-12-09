@@ -18,6 +18,7 @@
                             <span class="badge badge-warning float-right"><?php echo isset($REQUEST_COUNT_ISDONE_FALSE) ? $REQUEST_COUNT_ISDONE_FALSE : ''; ?></span>
                         </a>
                         <ul class="nav-second-level" aria-expanded="false">
+                            <li><a href="<?= base_url(); ?>jb_emailrequest/">Dashboard</a></li>
                             <li><a href="<?= base_url(); ?>jb_emailrequest/requ">Email Request</a></li>
                             <li><a href="<?= base_url(); ?>jb_emailrequest/request">All Request</a></li>
 

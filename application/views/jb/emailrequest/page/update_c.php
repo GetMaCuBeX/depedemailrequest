@@ -53,7 +53,7 @@
                                         <input name="school_id" type="text" class="form-control" readonly=""
                                                value="<?php echo $data->school_id; ?>">
                                     </div>
-                                    <label class="col-lg-2 col-form-label">Plantilla:</label>
+                                    <label class="col-lg-2 col-form-label">Position:</label>
                                     <div class="col-lg-4">
                                         <input name="plantilla" type="text" class="form-control" readonly=""
                                                value="<?php echo $data->plantilla; ?>">
