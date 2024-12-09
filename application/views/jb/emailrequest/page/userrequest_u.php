@@ -23,13 +23,15 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body table-responsive">
-                 <div class="form-group text-right mb-0"> 
+                 <div class="form-group text-left mb-0"> 
                     <form method="post">
                          <!--<a href="<?= base_url(); ?>c_emailrequest/create" class="btn btn-primary waves-effect waves-light mr-1">Add</a>--> 
                         <button type="button" class="btn btn-primary waves-effect waves-light width-md" onclick="window.location.href = '<?= base_url('jb_emailrequest/create') ?>'">
                             <!--<i class='fas fa-plus'></i>-->
                             <span>Create</span>
                         </button>
+                        <span></span>
+                        <br></br>
                     </form>
                 </div>
 

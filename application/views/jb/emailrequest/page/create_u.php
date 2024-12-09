@@ -37,8 +37,8 @@
                                         <input name="mis_emp_table_id" type="text" class="form-control" readonly=""
                                                placeholder="Employee ID" value="<?php echo $data->IDNumber; ?>">
                                     </div>
-                              
-                              
+
+
                                     <label class="col-lg-2 col-form-label">School ID:</label>
                                     <div class="col-lg-4">
                                         <input name="school_id" type="text" class="form-control" readonly=""
@@ -62,12 +62,12 @@
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label">Concern:</label>
                                     <div class="col-lg-4">
-                                        <select name="concern" class="form-control"> 
-                                            <option>CREATE</option>
-                                            <option>RESET - GMAIL DEPED ACCOUNT</option>
-                                            <option>RESET - MSO365 DEPED ACCOUNT</option>
-                                            <option>RESET - BOTH</option>
-                                            <option>OTHER</option> 
+                                        <select name="concern" class="form-control">
+                                            <option value="CREATE" <?= set_select('concern', 'CREATE', ($this->input->post('concern') === 'CREATE')); ?>>CREATE</option>
+                                            <option value="RESET - GMAIL DEPED ACCOUNT" <?= set_select('concern', 'RESET - GMAIL DEPED ACCOUNT', ($this->input->post('concern') === 'RESET - GMAIL DEPED ACCOUNT')); ?>>RESET - GMAIL DEPED ACCOUNT</option>
+                                            <option value="RESET - MSO365 DEPED ACCOUNT" <?= set_select('concern', 'RESET - MSO365 DEPED ACCOUNT', ($this->input->post('concern') === 'RESET - MSO365 DEPED ACCOUNT')); ?>>RESET - MSO365 DEPED ACCOUNT</option>
+                                            <option value="RESET - BOTH" <?= set_select('concern', 'RESET - BOTH', ($this->input->post('concern') === 'RESET - BOTH')); ?>>RESET - BOTH</option>
+                                            <option value="OTHER" <?= set_select('concern', 'OTHER', ($this->input->post('concern') === 'OTHER')); ?>>OTHER</option>
                                         </select>
                                     </div>
 
@@ -80,9 +80,12 @@
                                     <label class="col-lg-2 col-form-label" for="example-textarea">Personal
                                         Message:</label>
                                     <div class="col-lg-10">
-                                        <textarea name="concern_message" class="form-control" rows="5"
+                                        <textarea name="concern_message" 
+                                                  class="form-control" 
+                                                  rows="5"
                                                   id="example-textarea"
-                                                  placeholder="Enter your personal message here..." maxlength="6000"></textarea> 
+                                                  placeholder="Enter your personal message here..." 
+                                                  maxlength="6000"><?= set_value('concern_message', $this->input->post('concern_message')) ?></textarea>
                                                   <?php echo form_error("concern_message", "<div class='error'>", "</div>"); ?>
                                     </div>
                                 </div>
@@ -123,12 +126,12 @@
                                         <span>Save</span>
                                     </button>
 
-<!--                                    <button name="cancel" type="submit"
-                                            class="btn btn-danger waves-effect width-md waves-light btn-md">
-                                        <i class="fas fa-times"></i>
-                                        <span>Cancel</span>
-                                    </button> -->
-                  
+                                    <!--                                    <button name="cancel" type="submit"
+                                                                                class="btn btn-danger waves-effect width-md waves-light btn-md">
+                                                                            <i class="fas fa-times"></i>
+                                                                            <span>Cancel</span>
+                                                                        </button> -->
+
                                     <button name="cancel_updaterequest" type="button" onclick="window.history.back();"
                                             class="btn btn-danger waves-effect width-md waves-light btn-md">
                                         <!--<i class="fas fa-times"></i>-->
@@ -152,4 +155,3 @@
 
     <!-- end col -->
 </div> <!-- end row -->
- 

@@ -37,8 +37,12 @@ class Jb_emailrequest extends CI_Controller {
     }
 
     public function index() {
+        unset($_SESSION['username']);
+        unset($_SESSION['position']);
+        $_SESSION['username'] = 7315700;
 //        $_SESSION['username'] = 7315740;
-//        $_SESSION['position'] = 'ADMIN';
+        $_SESSION['position'] = 'ADMIN';
+//        $_SESSION['position'] = 'USER';
 //        session_unset(); // Unset session variables
 //        session_destroy(); // Destroy the session
         if ($this->_IS_IN_SESSION_empID()) { // CHECK IF SESSION LOGIN
@@ -75,8 +79,6 @@ class Jb_emailrequest extends CI_Controller {
 // DASHBOARD - MAIN PAGE
 // ------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------------------
- 
-
 // ------------------------------------------------------------------------------------------------------------
 // ------------------------------------------------------------------------------------------------------------
 // METHODS
@@ -247,6 +249,7 @@ class Jb_emailrequest extends CI_Controller {
             $this->load->view($this->partials . 'topbar', $this->values);
             $this->load->view($this->partials . 'sidebar', $this->values);
             $rs['data'] = $this->Jb_emailrequest_M->_read_data_from_employee($_SESSION['username']);
+            
             $this->load->view($this->p_create_u, $rs);
             $this->load->view($this->partials . 'footer', $this->values);
         } else {
@@ -523,7 +526,7 @@ class Jb_emailrequest extends CI_Controller {
                 'processed_by' => $processed_by,
                 'response_message' => $response_message
             );
-            
+
             $this->Jb_emailrequest_M->_update_where($id, $data);
             redirect($this->c_method_request); // UPDATE WAS SUCCESSFUL
         }

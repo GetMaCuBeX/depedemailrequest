@@ -83,10 +83,10 @@
                                         </select>
                                     </div>
 
-                                    <label class="col-lg-2 col-form-label">Plantilla:</label>
+<!--                                    <label class="col-lg-2 col-form-label">Plantilla:</label>
                                     <div class="col-lg-4">
-                                        <input name="plantilla" type="text" class="form-control"  readonly=""   value="<?php echo $data->plantilla; ?>">
-                                    </div>
+                                        <input name="plantilla" type="text" class="form-control"  readonly=""   value="<?php //echo $data->plantilla; ?>">
+                                    </div>-->
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label" for="example-textarea">Personal
