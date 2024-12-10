@@ -9,7 +9,7 @@
 
                 <!--<li class="menu-title">Navigation</li>-->
 
-                <?php if (isset($_SESSION['username']) && $_SESSION['position'] === 'RE_ADMIN'): ?>
+                <?php if (isset($_SESSION['username']) && $_SESSION['position'] === 'readmin'): ?>
 
                     <li>
                         <a href="javascript: void(0);" class="waves-effect">

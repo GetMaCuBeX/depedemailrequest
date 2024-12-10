@@ -37,11 +37,11 @@ class Jb_emailrequest extends CI_Controller {
     }
 
     public function index() {
-//        unset($_SESSION['username']);
-//        unset($_SESSION['position']);
-//        $_SESSION['username'] = 7315700;
+        unset($_SESSION['username']);
+        unset($_SESSION['position']);
+        $_SESSION['username'] = 7315700;
 //        $_SESSION['username'] = 7315740;
-//        $_SESSION['position'] = 'RE_ADMIN';
+        $_SESSION['position'] = 'readmin';
 //        $_SESSION['position'] = 'USER';
 //        session_unset(); // Unset session variables
 //        session_destroy(); // Destroy the session
@@ -292,7 +292,7 @@ class Jb_emailrequest extends CI_Controller {
 
     public function _IS_AN_ADMIN_empID() {
         if (isset($_SESSION['username']) && isset($_SESSION['position'])) {
-            if ($_SESSION['position'] == 'RE_ADMIN') {
+            if ($_SESSION['position'] == 'readmin') {
                 return true;
             } else {
                 return false;
@@ -310,7 +310,7 @@ class Jb_emailrequest extends CI_Controller {
     public function _SET_VALUES() {
         if (isset($_SESSION['username']) && isset($_SESSION['position'])) {
             // ADMIN
-            if ($_SESSION['position'] == 'RE_ADMIN') {
+            if ($_SESSION['position'] == 'readmin') {
                 $count = $this->Jb_emailrequest_M->_count_all_request_isdone_false();
                 $this->values["REQUEST_COUNT_ISDONE_FALSE"] = $count;
                 // REGULAR USER
