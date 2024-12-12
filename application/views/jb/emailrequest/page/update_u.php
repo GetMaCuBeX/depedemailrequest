@@ -17,7 +17,6 @@
 
 
 
-
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -52,19 +51,19 @@
                                                   readonly><?php echo $data->concern_message; ?></textarea>
                                     </div>
                                 </div>
-<!--                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label" for="example-email">Email:</label>
-                                    <div class="col-lg-4">
-                                        <input name="personal_email" type="email" id="example-email"
-                                               class="form-control" placeholder="" readonly
-                                               value="<?php echo $data->personal_email; ?>">
-                                    </div>
-                                    <label class="col-lg-2 col-form-label" for="contact-number">Contact Number:</label>
-                                    <div class="col-lg-4">
-                                        <input name="contact_number" type="text" id="contact-number"
-                                               class="form-control" readonly value="<?php echo $data->contact_number; ?>">
-                                    </div>
-                                </div>-->
+                                <!--                                <div class="form-group row">
+                                                                    <label class="col-lg-2 col-form-label" for="example-email">Email:</label>
+                                                                    <div class="col-lg-4">
+                                                                        <input name="personal_email" type="email" id="example-email"
+                                                                               class="form-control" placeholder="" readonly
+                                                                               value="<?php echo $data->personal_email; ?>">
+                                                                    </div>
+                                                                    <label class="col-lg-2 col-form-label" for="contact-number">Contact Number:</label>
+                                                                    <div class="col-lg-4">
+                                                                        <input name="contact_number" type="text" id="contact-number"
+                                                                               class="form-control" readonly value="<?php echo $data->contact_number; ?>">
+                                                                    </div>
+                                                                </div>-->
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label" for="example-email">DepEd Email:</label>
                                     <div class="col-lg-10">
@@ -102,12 +101,12 @@
                                 </div>
 
                         </div>
-<!--                        <div class="form-group row">
-                            <label class="col-lg-2 col-form-label">Process By:</label>
-                            <div class="col-lg-10">
-                                <input name="process_by" type="text" class="form-control" disabled="" value="Admin">
-                            </div>
-                        </div>-->
+                        <!--                        <div class="form-group row">
+                                                    <label class="col-lg-2 col-form-label">Process By:</label>
+                                                    <div class="col-lg-10">
+                                                        <input name="process_by" type="text" class="form-control" disabled="" value="Admin">
+                                                    </div>
+                                                </div>-->
                         <div class="form-group row">
                             <label class="col-lg-2 col-form-label" for="example-textarea">Response Message:</label>
                             <div class="col-lg-10">
@@ -151,26 +150,24 @@
 
 
                         </form>
+                        <script>
+                            function autoExpand(textarea) {
+                                textarea.style.height = 'auto'; // Reset the height
+                                textarea.style.height = textarea.scrollHeight + 'px'; // Set to scrollHeight
+                            }
+
+                            // Call autoExpand on page load to set initial height based on content
+                            window.onload = function () {
+                                const textarea = document.getElementById('example-textarea');
+                                autoExpand(textarea);
+                            };
+                        </script>
                     </div>
                 </div>
-
             </div>
             <!-- end row -->
 
-        </div>  <!-- end card -->
+
+        </div> <!-- end card -->
     </div> <!-- end col -->
 </div> <!-- end row -->
-
-
-<script>
-function autoExpand(textarea) {
-    textarea.style.height = 'auto'; // Reset the height
-    textarea.style.height = textarea.scrollHeight + 'px'; // Set to scrollHeight
-}
-
-// Call autoExpand on page load to set initial height based on content
-window.onload = function() {
-    const textarea = document.getElementById('example-textarea');
-    autoExpand(textarea);
-};
-</script>
